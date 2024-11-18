@@ -1,96 +1,182 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* General Styles */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Black background */
+  color: #F2F2F2; /* Light text color for contrast */
   margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #022840; /* Dark Blue header */
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+/* Header logo and title */
+header img {
+  border: none; /* No border or circle */
+}
+
+header h1 {
+  margin: 0.5rem 0;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  gap: 1rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+nav a {
+  text-decoration: none;
+  color: #F2F2F2;
+  background-color: #025373; /* Medium Blue background for links */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+nav a:hover {
+  background-color: #037F8C; /* Light Teal hover effect */
+}
+
+/* Week Selector */
+.week-selector {
+  margin-top: 1rem;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 2px solid #025373; /* Border to match medium blue */
+  font-size: 1rem;
+}
+
+/* Sections */
+section {
+  margin: 1.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Completed Game Section */
+.completed-game {
+  background-color: #025E73; /* Dark Teal background */
+}
+
+/* Upcoming Games Section */
+.upcoming-games {
+  background-color: #025373; /* Medium Blue background */
+}
+
+/* Leaders Section */
+.leaders {
+  background-color: #022840; /* Dark Blue background */
+}
+
+/* Game Box */
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #037F8C; /* Light Teal background */
+  border: 2px solid #025373; /* Border to match medium blue */
+  border-radius: 8px;
+}
+
+.game img {
+  width: 50px;
+  height: 50px;
+}
+
+.team {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.win-probability, .final-result, .game-time {
+  font-weight: bold;
+  text-align: center;
 }
 
-.card {
-  padding: 2em;
+/* Leaders List */
+.leader-category h3 {
+  margin-bottom: 1rem;
+  color: #F2F2F2;
+  background-color: #025373; /* Medium Blue background */
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+.leader-category ul {
+  list-style: none;
+  padding: 0;
 }
 
-button {
+.leader-category li {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  background-color: #022840; /* Dark Blue background */
+  padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.leader-category li img {
+  margin-right: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #022840; /* Dark Blue footer */
+  color: #fff;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Breaking News */
+.breaking-news {
+  background-color: #037F8C; /* Lighter teal background */
+  color: #F2F2F2; /* Light text */
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 3rem;
+  line-height: 3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.breaking-news p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: inline-block;
+  transform: translateX(100%);
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(100%);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+      transform: translateX(-100%);
   }
 }

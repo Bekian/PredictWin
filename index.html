@@ -1,13 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <img src="nfl-logo.png" alt="NFL Logo" width="100" height="100">
+        <nav>
+            <ul>
+                <li><a href="#" id="games-link">Games</a></li>
+                <li><a href="#" id="leaders-link">Leaders</a></li>
+            </ul>
+        </nav>
+        <h1 id="week-title">Week 11</h1>
+        <div class="breaking-news">
+            <p>🏈 Breaking News: Patrick Mahomes suffers minor injury, expected to play next week! | 🏆 Upcoming: Eagles vs. Cowboys this Sunday! | 🔥 Top Scorer: Travis Kelce reaches 18 touchdowns!</p>
+        </div>
+        <div class="week-selector">
+            <label for="week-select">Select Week:</label>
+            <select id="week-select">
+                <script>
+                    for (let i = 1; i <= 18; i++) {
+                        document.write(`<option value="${i}">Week ${i}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+    </header>
+
+    <section class="completed-game">
+        <h2>Completed Game</h2>
+        <div class="game">
+            <div class="team home-team">
+                <img src="eagles-logo.png" alt="Philadelphia Eagles">
+                <p>Philadelphia Eagles (7-2)</p>
+                <p class="score">18</p>
+            </div>
+            <div class="team away-team">
+                <img src="commanders-logo.png" alt="Washington Commanders">
+                <p>Washington Commanders (7-3)</p>
+                <p class="score">18</p>
+            </div>
+            <div class="win-probability">
+                <p>WIN PROBABILITY</p>
+                <p>73%</p>
+            </div>
+            <div class="final-result">
+                <p>FINAL: Eagles Win</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-games" id="games-section">
+        <h2>Upcoming Games</h2>
+        <div class="game">
+            <div class="team home-team">
+                <img src="rams-logo.png" alt="Los Angeles Rams">
+                <p>Los Angeles Rams (4-5)</p>
+            </div>
+            <div class="team away-team">
+                <img src="patriots-logo.png" alt="New England Patriots">
+                <p>New England Patriots (3-7)</p>
+            </div>
+            <div class="win-probability">
+                <p>WIN PROBABILITY</p>
+                <p>64%</p>
+            </div>
+            <div class="game-time">
+                <p>Sun 1:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="leaders" id="leaders-section" style="display: none;">
+        <h2>League Leaders</h2>
+        <div class="leader-category">
+            <h3>Top Scorers</h3>
+            <ul>
+                <li>
+                    <img src="patrick-mahomes.png" alt="Patrick Mahomes" width="50" height="40">
+                    Patrick Mahomes - 25 Touchdowns
+                </li>
+                <li>
+                    <img src="davante-adams.png" alt="Davante Adams" width="50" height="35">
+                    Davante Adams - 20 Touchdowns
+                </li>
+                <li>
+                    <img src="travis-kelce.png" alt="Travis Kelce" width="50" height="40">
+                    Travis Kelce - 18 Touchdowns
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('games-link').onclick = () => {
+            document.getElementById('games-section').style.display = 'block';
+            document.getElementById('leaders-section').style.display = 'none';
+        };
+
+        document.getElementById('leaders-link').onclick = () => {
+            document.getElementById('leaders-section').style.display = 'block';
+            document.getElementById('games-section').style.display = 'none';
+        };
+
+        document.getElementById('week-select').onchange = (e) => {
+            const selectedWeek = e.target.value;
+            document.getElementById('week-title').textContent = `Week ${selectedWeek}`;
+        };
+    </script>
+</body>
 </html>
+
